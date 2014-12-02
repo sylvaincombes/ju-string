@@ -1,0 +1,23 @@
+{
+    "tags"      : {
+        "allowUnknownTags" : true
+    },
+    "plugins"   : ["plugins/markdown"],
+    "templates" : {
+        "cleverLinks"           : true,
+        "monospaceLinks"        : false,
+        "outputSourceFiles"     : false,
+        "outputSourcePath"      : false,
+        "systemName"            : "ju-string",
+        "footer"                : "",
+        "copyright"             : "ju-string Copyright © 2014 Sylvain Combes.",
+        "navType"               : "vertical",
+        // amelia cerulean cosmo cyborg flatly journal readable simplex slate spacelab spruce superhero united
+        "theme"                 : "simplex",
+        "linenums"              : true,
+        "collapseSymbols"       : false,
+        "inverseNav"            : true,
+        "highlightTutorialCode" : true,
+        "syntaxTheme"           : "dark"
+    }
+}

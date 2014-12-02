@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Browser example</title>
+    <link rel="stylesheet" href="knacss.css"/>
+    <style type="text/css">
+        input[type=submit] {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        input[type=submit]:hover {
+            background: dimgrey;
+        }
+
+        input[disabled], input[disabled]:hover {
+            background: lightgray;
+            cursor: not-allowed;
+        }
+
+    </style>
+<body>
+<div class="w80 center">
+
+    <h1>ju.string standalone usage in browser</h1>
+
+    <ol>
+        <li>In your html page include the javascript :
+            <pre>&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;../build/ju/string.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+        </li>
+        <li>Start using with for example :
+            <pre>ju.string.trim('   my value    ');</pre>
+        </li>
+    </ol>
+
+    <h2>ju.string standalone demo</h2>
+
+    <form action="#" id="demo">
+        <label for="input">The input string</label>
+        <textarea name="" id="input" cols="100" rows="6"> a reader
+            will be distracted by the readable content
+            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here,
+
+        </textarea>
+
+        <hr/>
+
+        <fieldset id="actions">
+            <legend>The actions</legend>
+        </fieldset>
+
+        <hr/>
+
+        <label for="output">The result</label>
+        <textarea name="" id="output" cols="100" rows="6"></textarea>
+    </form>
+</div>
+
+<script type="text/javascript" src="../build/ju/string.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) {
+        // Generate action buttons
+        for (var z in ju.string) {
+            if (typeof ju.string[z] == 'function') {
+                var fieldset = document.querySelector('#demo fieldset');
+                switch (z) {
+                    case 'contains':
+                    case 'startsWith':
+                    case 'endsWith':
+                    case 'repeat':
+                        fieldset.innerHTML += '<input type="submit" value="' + z + '" disabled />';
+                        break;
+                    default:
+                        fieldset.innerHTML += '<input type="submit" value="' + z + '" />';
+                }
+
+            }
+        }
+
+        var form = document.getElementById('demo');
+        form.addEventListener("submit", voidForm, false);
+
+        var inputs = document.querySelectorAll('#demo input[type="submit"]');
+        for (var i = 0; i < inputs.length; ++i) {
+            inputs[i].addEventListener('click', doIt, false);
+        }
+
+        function doIt(event) {
+            document.querySelector('#output').value = ju.string[event.target.value](document.querySelector('#input').value);
+        }
+
+        function voidForm(event) {
+            event.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "name": "ju.string",
+  "version": "0.1.0",
+  "description": "Collection of utilities for the String javascript object",
+  "main": "src/string.js",
+  "scripts": {
+    "test": "tape tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylvaincombes/ju-string.git"
+  },
+  "keywords": [
+    "string",
+    "javascript",
+    "nodejs",
+    "utils",
+    "utilities"
+  ],
+  "author": {
+    "name": "Sylvain Combes",
+    "email": "combes.sylvain@gmail.com",
+    "url": "http://sylvaincombes.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sylvaincombes/ju-string/issues"
+  },
+  "homepage": "https://github.com/sylvaincombes/ju-string",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-browserify": "^3.2.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-exorcise": "^0.2.0",
+    "grunt-jsdoc": "^0.6.1",
+    "grunt-tape": "0.0.2",
+    "matchdep": "*",
+    "tape": "^3.0.3",
+    "testling": "^1.7.1"
+  }
+}
