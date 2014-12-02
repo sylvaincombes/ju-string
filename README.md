@@ -8,7 +8,12 @@ It is part of the ju (Javascript Utilities) collection.
 
 ## Status
 
-[![Build Status](https://travis-ci.org/sylvaincombes/ju-string.svg)](https://travis-ci.org/sylvaincombes/ju-string) [![Coverage Status](https://img.shields.io/coveralls/sylvaincombes/ju-string.svg)](https://coveralls.io/r/sylvaincombes/ju-string) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/sylvaincombes/ju-string.svg)](https://travis-ci.org/sylvaincombes/ju-string) [![Coverage Status](https://img.shields.io/coveralls/sylvaincombes/ju-string.svg)](https://coveralls.io/r/sylvaincombes/ju-string) 
+
+[![browser support](https://ci.testling.com/sylvaincombes/ju-string.png)
+](https://ci.testling.com/sylvaincombes/ju-string)
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## What it is
 
