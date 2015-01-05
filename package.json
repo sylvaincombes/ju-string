@@ -40,7 +40,8 @@
         "tape": "^3.0.3",
         "testling": "^1.7.1",
         "zuul": "1.*",
-        "istanbul": "*"
+        "istanbul": "*",
+        "coveralls": "^2.*"
     },
     "scripts": {
         "test": "npm run test-tape; npm test-zuul; npm run coverage;",
