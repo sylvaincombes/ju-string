@@ -577,6 +577,317 @@ ju.string.contains(&#x27;foo bar size&#x27;, &#x27;z3w&#x27;); // return false</
         
             
 <dt>
+    <h4 class="name" id="escapeHTML"><span class="type-signature"></span>escapeHTML<span class="signature">(string)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Converts HTML special characters to their entity equivalents.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/sstephenson/prototype/blob/d9411e5/src/prototype/lang/string.js#L408">https://github.com/sstephenson/prototype/blob/d9411e5/src/prototype/lang/string.js#L408</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">ju.string.escapeHTML(&#x27;&lt;div class=&quot;article&quot;&gt;This is an article&lt;/div&gt;&#x27;); // return &#x27;&amp;lt;div class=&quot;article&quot;&amp;gt;This is an article&amp;lt;/div&amp;gt;&#x27;</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="levenshtein"><span class="type-signature"></span>levenshtein<span class="signature">(firstString, secondString)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Return the levenshtein distance between two strings</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>firstString</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>First string to compare to second String</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>secondString</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Second string to compare to string1</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="http://en.wikipedia.org/wiki/Levenshtein_distance">http://en.wikipedia.org/wiki/Levenshtein_distance</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The levenshtein distance</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">ju.string.levenshtein(&#x27;karolin&#x27;, &#x27;kathrin&#x27;); // return 3</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="nl2br"><span class="type-signature"></span>nl2br<span class="signature">(string, <span class="optional">is_xhtml</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
     
@@ -949,6 +1260,146 @@ ju.string.contains(&#x27;foo bar size&#x27;, &#x27;z3w&#x27;); // return false</
         
             
 <dt>
+    <h4 class="name" id="reverse"><span class="type-signature"></span>reverse<span class="signature">(string)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Reverse a string</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string to reverse</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">ju.string.reverse(&#x27;bodyboard&#x27;); // return &#x27;draobydob&#x27;</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="startsWith"><span class="type-signature"></span>startsWith<span class="signature">(inputString, searchedString, <span class="optional">position</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
     
@@ -1180,6 +1631,144 @@ ju.string.contains(&#x27;foo bar size&#x27;, &#x27;z3w&#x27;); // return false</
     <pre class="sunlight-highlight-javascript">ju.string.startsWith(&#x27;foo bar size&#x27;, &#x27;foo&#x27;); // return true</pre>
 
 
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="stripTags"><span class="type-signature"></span>stripTags<span class="signature">(string)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Remove html tags from a string</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string we want to remove tags</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The string without the tags</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
     
 </dd>
 
@@ -2023,6 +2612,255 @@ ju.string.contains(&#x27;foo bar size&#x27;, &#x27;z3w&#x27;); // return false</
     
 </dd>
 
+        
+            
+<dt>
+    <h4 class="name" id="unescapeHTML"><span class="type-signature"></span>unescapeHTML<span class="signature">(string)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Converts the entity forms of special HTML characters to their normal form.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/sstephenson/prototype/blob/d9411e5/src/prototype/lang/string.js#L426">https://github.com/sstephenson/prototype/blob/d9411e5/src/prototype/lang/string.js#L426</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">ju.string.escapeHTML(&#x27;&amp;lt;div class=&quot;article&quot;&amp;gt;This is an article&amp;lt;/div&amp;gt;&#x27;); // return &#x27;&lt;div class=&quot;article&quot;&gt;This is an article&lt;/div&gt;&#x27;</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="uuid"><span class="type-signature"></span>uuid<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Generate a uuid and return it</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript for more details.">http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript for more details.</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>uuid</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">string</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">ju.string.uuid(); // return something like : &quot;3bce4931-6c75-41ab-afe0-2ec108a30860&quot;</pre>
+
+
+    
+</dd>
+
         </dl>
     
 
@@ -2049,7 +2887,7 @@ ju.string.contains(&#x27;foo bar size&#x27;, &#x27;z3w&#x27;); // return false</
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a>
-		on 2014-12-02T23:12:42+01:00 using the <a
+		on 2015-01-05T17:27:25+01:00 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

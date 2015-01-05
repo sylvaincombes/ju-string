@@ -8,12 +8,9 @@ It is part of the ju (Javascript Utilities) collection.
 
 ## Status
 
-[![Build Status](https://travis-ci.org/sylvaincombes/ju-string.svg)](https://travis-ci.org/sylvaincombes/ju-string) [![Coverage Status](https://img.shields.io/coveralls/sylvaincombes/ju-string.svg)](https://coveralls.io/r/sylvaincombes/ju-string) 
+[![Build Status](https://travis-ci.org/sylvaincombes/ju-string.svg)](https://travis-ci.org/sylvaincombes/ju-string) [![Sauce Test Status](https://saucelabs.com/buildstatus/ju-string)](https://saucelabs.com/u/ju-string) [![Coverage Status](https://img.shields.io/coveralls/sylvaincombes/ju-string.svg)](https://coveralls.io/r/sylvaincombes/ju-string)
 
-[![browser support](https://ci.testling.com/sylvaincombes/ju-string.png)
-](https://ci.testling.com/sylvaincombes/ju-string)
-
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/ju-string.svg)](https://saucelabs.com/u/ju-string)
 
 ## What it is
 
@@ -24,7 +21,7 @@ It's a simple string utility to make the everyday job easier.
 - doesn't pollute the native javascript String object
 - usable in browser or with [nodejs](http://nodejs.org/)
 - made with [browserify](http://browserify.org/)
-- build with [grunt](http://gruntjs.com/)
+- build with [grunt](http://gruntjs.com/) 
 - unit tested with [tape](https://github.com/substack/tape) and [testling](https://ci.testling.com/)
 - simple examples provided in the [examples](examples) folder
 - api doc made with [jsdoc](http://usejsdoc.org/) see [doc](doc/index.html)

@@ -243,6 +243,21 @@ test("ju.string.repeat", function (t) {
     t.end();
 });
 
+test("ju.string.reverse", function(t){
+   var equals = {
+       'bodyboard':'draobydob',
+       '':'',
+       'youpi':'ipuoy',
+       'aéronef':'fenoréa'
+   };
+    for (var e in equals) {
+        if (equals.hasOwnProperty(e)) {
+            t.equal(ju.string.reverse(e), equals[e], '"' + e + '" reverse "' + equals[e] + '"');
+        }
+    }
+    t.end();
+});
+
 test("ju.string.nl2br", function (t) {
     var datas = [
         {
@@ -281,6 +296,82 @@ test("ju.string.nl2br", function (t) {
         if (datas.hasOwnProperty(e)) {
             var result = ju.string.nl2br(datas[e].value, datas[e].params);
             t.equal(result, datas[e].expected, '"' + datas[e].value + '" nl2br, xhtml ? "' + datas[e].params);
+        }
+    }
+
+    t.end();
+});
+
+test("ju.string.stripTags", function (t) {
+    var ok = {
+        'pinaise\n': 'pinaise\n',
+        '<a href="#" target="_blank">pinaise</a>': 'pinaise',
+        '<p><a href="#" target="_blank">pinaise</a></p>': 'pinaise',
+        '<p><a href="#" target="_blank"> <img src="test.png" /> testing   a <span>method</span> <strong>of</strong> <em>ju.string</em> called <quote>stripTags</quote></a></p>': '  testing   a method of ju.string called stripTags'
+    };
+
+    for (var e in ok) {
+        if (ok.hasOwnProperty(e)) {
+            t.equal(ju.string.stripTags(e), ok[e]);
+        }
+    }
+
+    t.end();
+});
+
+test("ju.string.levenshtein", function (t) {
+    var datas = [
+        {
+            value: 'NICHE',
+            params: 'CHIENS',
+            expected: 5
+        },
+        {
+            value: 'kitten',
+            params: 'sitting',
+            expected: 3
+        },
+        {
+            value: 'same',
+            params: 'same',
+            expected: 0
+        },
+        {
+            value: 'same',
+            params: 'Same',
+            expected: 1
+        },
+        {
+            value: 'karolin',
+            params: 'kathrin',
+            expected: 3
+        },
+        {
+            value: 'karolin',
+            params: 'kerstin',
+            expected: 3
+        },
+        {
+            value: '1011101',
+            params: '1001001',
+            expected: 2
+        },
+        {
+            value: '2173896',
+            params: '2233796',
+            expected: 3
+        },
+        {
+            value: '',
+            params: '',
+            expected: 0
+        }
+    ];
+
+    for (var e in datas) {
+        if (datas.hasOwnProperty(e)) {
+            var result = ju.string.levenshtein(datas[e].value, datas[e].params);
+            t.equal(result, datas[e].expected, '"' + datas[e].value + '" levenshtein "' + datas[e].params);
         }
     }
 

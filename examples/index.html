@@ -92,7 +92,11 @@
         }
 
         function doIt(event) {
-            document.querySelector('#output').value = ju.string[event.target.value](document.querySelector('#input').value);
+            switch(event.target.value){
+                default:
+                    document.querySelector('#output').value = ju.string[event.target.value](document.querySelector('#input').value);
+            }
+
         }
 
         function voidForm(event) {

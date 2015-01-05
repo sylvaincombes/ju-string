@@ -33,26 +33,23 @@
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
         "grunt-exorcise": "^0.2.0",
+        "grunt-istanbul": "^0.4.0",
         "grunt-jsdoc": "^0.6.1",
         "grunt-tape": "0.0.2",
         "matchdep": "*",
         "tape": "^3.0.3",
-        "testling": "^1.7.1"
-    },
-    "testling": {
-        "files": "tests/*.js",
-        "browsers": [
-            "ie/6..latest",
-            "chrome/22..latest",
-            "firefox/16..latest",
-            "safari/latest",
-            "opera/11.0..latest",
-            "iphone/6",
-            "ipad/6",
-            "android-browser/latest"
-        ]
+        "testling": "^1.7.1",
+        "zuul": "1.*"
     },
     "scripts": {
-        "test": "tape tests/*.js"
+        "test": "npm run test-tape; npm test-zuul; npm run coverage;",
+        "test-tape": "tape tests/*.js",
+
+        "test-zuul": "zuul -- tests/*.js",
+        "test-zuul-local": "zuul --local 8080 -- tests/*.js",
+        "test-zuul-tunnel": "zuul --tunnel -- tests/*.js",
+
+        "test-browser": "browserify tests/*.js | testling",
+        "coverage": "istanbul cover node_modules/.bin/tape --report lcovonly tests/*.js && coveralls < ./coverage/lcov.info"
     }
 }

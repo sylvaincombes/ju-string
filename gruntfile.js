@@ -57,6 +57,29 @@ module.exports = function (grunt) {
             files: ['tests/*.js']
         },
 
+        instrument: {
+            files: 'app/*.js',
+            options: {
+                lazy: true,
+                basePath: 'tests/coverage/instrument/'
+            }
+        },
+
+        storeCoverage: {
+            options: {
+                dir: 'tests/coverage/reports'
+            }
+        },
+
+        makeReport: {
+            src: 'tests/coverage/reports/**/*.json',
+            options: {
+                type: 'lcov',
+                dir: 'tests/coverage/reports',
+                print: 'detail'
+            }
+        },
+
         jsdoc : {
             dist : {
                 src: ['src/**/*.js', 'README.md'],
@@ -80,6 +103,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'exorcise', 'uglify', 'jsdoc']);
     grunt.registerTask('test', ['build', 'tape']);
+    grunt.registerTask('coverage', ['instrument', 'test', 'storeCoverage', 'makeReport']);
     grunt.registerTask('default', ['watch']);
 
 };
