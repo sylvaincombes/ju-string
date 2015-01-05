@@ -44,7 +44,7 @@
         "coveralls": "^2.*"
     },
     "scripts": {
-        "test": "npm run test-tape; npm test-zuul; npm run coverage;",
+        "test": "npm run test-tape; npm run test-zuul-tunnel; npm run coverage;",
         "test-tape": "tape tests/*.js",
 
         "test-zuul": "zuul -- tests/*.js",
