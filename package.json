@@ -33,7 +33,6 @@
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
         "grunt-exorcise": "^0.2.0",
-        "grunt-istanbul": "^0.4.0",
         "grunt-jsdoc": "^0.6.1",
         "grunt-tape": "0.0.2",
         "matchdep": "*",
