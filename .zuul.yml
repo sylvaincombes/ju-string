@@ -1,18 +1,79 @@
 ui: tape
 browsers:
   - name: chrome
-    version: latest
+    version: 26..latest
+    platform: Windows 8.1
+  - name: chrome
+    version: 26..latest
+    platform: Windows 8
+  - name: chrome
+    version: 26..latest
+    platform: Windows 7
+  - name: chrome
+    version: 26..latest
+    platform: Windows XP
+
+  - name: chrome
+    version: 27..latest
+    platform: OS X 10.6
+  - name: chrome
+    version: 27..latest
+    platform: OS X 10.8
+  - name: chrome
+    version: 31..latest
+    platform: OS X 10.9
+  - name: chrome
+    version: 37..latest
+    platform: OS X 10.10
+
+  - name: chrome
+    version: 26..latest
+    platform: Linux
+
   - name: firefox
-    version: latest
+    version: 3.0..latest
+    platform: Windows 8.1
+  - name: firefox
+    version: 3.0..latest
+    platform: Windows 8
+  - name: firefox
+    version: 3.0..latest
+    platform: Windows 7
+  - name: firefox
+    version: 3.0..latest
+    platform: Windows XP
+  - name: firefox
+    version: 4..latest
+    platform: OS X 10.6
+  - name: firefox
+    version: 4..latest
+    platform: OS X 10.9
+  - name: firefox
+    version: 32..latest
+    platform: OS X 10.9
+  - name: firefox
+    version: 3.6..latest
+    platform: Linux
+
   - name: safari
-    version: latest
-  - name: opera
-    version: latest
-  - name: ipad
-    version: 6
-  - name: android
-    version: latest
-  - name: iphone
-    version: 6
+    version: 5..latest
+
   - name: ie
     version: 6..latest
+
+  - name: opera
+    version: latest
+    platform: Windows 8.1
+
+  - name: opera
+    version: latest
+    platform: Linux
+
+  - name: android
+    version: 4.0..latest
+
+  - name: ipad
+    version: 4.3..latest
+
+  - name: iphone
+    version: 4.3..latest
