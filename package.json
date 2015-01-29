@@ -38,7 +38,7 @@
         "matchdep": "*",
         "tape": "^3.0.3",
         "testling": "^1.7.1",
-        "zuul": "1.*",
+        "zuul": "git://github.com/defunctzombie/zuul#master",
         "istanbul": "*",
         "coveralls": "^2.*"
     },

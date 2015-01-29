@@ -22,7 +22,7 @@ It's a simple string utility to make the everyday job easier.
 - usable in browser or with [nodejs](http://nodejs.org/)
 - made with [browserify](http://browserify.org/)
 - build with [grunt](http://gruntjs.com/) 
-- unit tested with [tape](https://github.com/substack/tape) and [testling](https://ci.testling.com/)
+- unit tested with [tape](https://github.com/substack/tape) and [saucelabs](https://saucelabs.com/)
 - simple examples provided in the [examples](examples) folder
 - api doc made with [jsdoc](http://usejsdoc.org/) see [doc](doc/index.html)
 

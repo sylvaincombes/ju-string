@@ -12,7 +12,7 @@
         "footer"                : "",
         "copyright"             : "ju-string Copyright © 2014 Sylvain Combes.",
         "navType"               : "vertical",
-        "theme"                 : "simplex",
+        "theme"                 : "flatly",
         "linenums"              : true,
         "collapseSymbols"       : false,
         "inverseNav"            : true,

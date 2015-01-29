@@ -4,7 +4,7 @@
 * 
 * @author : Sylvain Combes <combes.sylvain@gmail.com>
 * @version : 0.1.0
-* @date 2015-01-05
+* @date 2015-01-13
  */
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),(f.ju||(f.ju={})).string=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
@@ -33,7 +33,7 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trim = function (string) {
-        if (String.prototype.trim) {
+        if (String.hasOwnProperty('trim') && String.prototype.trim) {
             return string.trim();
         }
         return string.replace(/^\s+|\s+$/g, '');
@@ -128,7 +128,7 @@ function Str() {
      * @return {boolean} True if inputString contains searchedString, false otherwhise
      */
     Str.prototype.contains = function (inputString, searchedString) {
-        if (String.prototype.contains) {
+        if (String.hasOwnProperty('contains') && String.prototype.contains) {
             return inputString.contains(searchedString);
         }
         return inputString.indexOf(searchedString) !== -1;
@@ -150,7 +150,7 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.startsWith = function (inputString, searchedString, position) {
-        if (String.prototype.startsWith) {
+        if (String.hasOwnProperty('startsWith') && String.prototype.startsWith) {
             return inputString.startsWith(searchedString);
         }
         position = position || 0;
@@ -173,7 +173,7 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.endsWith = function (inputString, searchedString, position) {
-        if (String.prototype.endsWith) {
+        if (String.hasOwnProperty('endsWith') && String.prototype.endsWith) {
             return inputString.endsWith(searchedString);
         }
 
@@ -203,7 +203,7 @@ function Str() {
      * @return {string}
      */
     Str.prototype.repeat = function (string, count) {
-        if (String.prototype.repeat) {
+        if (String.hasOwnProperty('repeat') && String.prototype.repeat) {
             return string.repeat(count);
         }
 

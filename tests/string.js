@@ -15,15 +15,34 @@ function testDatas(datas, fn, assert) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // string
-test("ju.string.trim", function (t) {
-    var dataPool = {
+
+var trim = {
+    dataPool: {
         'one': 'one',
         'T': 'T',
         ' T a p      e diofsnf dsqoin qsdoin  qsido qsdio ': 'T a p      e diofsnf dsqoin qsdoin  qsido qsdio',
         '   plop    ': 'plop'
-    };
+    },
+    test: function (t) {
+        testDatas(trim.dataPool, ju.string.trim, t.equal);
+    }
+};
 
-    testDatas(dataPool, ju.string.trim, t.equal);
+test("ju.string.trim", function (t) {
+    if (String.hasOwnProperty('trim') || String.prototype.trim) {
+        String.prototype.trim = undefined;
+    }
+
+    trim.test(t);
+    t.end();
+});
+
+test("ju.string.trim:native", function (t) {
+    if (!String.hasOwnProperty('trim') || !String.prototype.trim) {
+        String.prototype.trim = ju.string.trim;
+    }
+
+    trim.test(t);
     t.end();
 });
 
@@ -93,8 +112,8 @@ test("ju.string.toUpperCaseWords", function (t) {
     t.end();
 });
 
-test("ju.string.contains", function (t) {
-    var ok = {
+var contains = {
+    ok: {
         'one thing at a time': 'one',
         "Un appât à ça c'est sûr": 'appât',
         "Un appât 0 à ça c'est sûr": 'est',
@@ -109,33 +128,50 @@ test("ju.string.contains", function (t) {
         '0 1000 {{ 2000 }} 3 4 567 4 quatre vingt': '}}',
         '0 10000 {{2000}} x y z 3 4 567 4 quatre vingt': 'x',
         '0 10000 {{2000}} x y z 3 4 567 4 quatre vingt deux': 'deux'
-    };
-
-    var ko = {
+    },
+    ko: {
         'one thing is good': 'purple',
         'one thing at a time': 'One',
         "Un appât à ça c'est sûr": 'APPÂT',
         '0 1 {{2000}} 3 4 567 44 quatre vingt': 'ah bon',
         '0 1 {{2000}} 3 4 567 4 quatre vingt': '567'
-    };
+    },
+    test: function (t) {
+        for (var e in contains.ok) {
+            if (contains.ok.hasOwnProperty(e)) {
+                t.ok(ju.string.contains(e, contains.ok[e]), '"' + e + '" contains "' + contains.ok[e] + '"');
+            }
+        }
 
-    for (var e in ok) {
-        if (ok.hasOwnProperty(e)) {
-            t.ok(ju.string.contains(e, ok[e]), '"' + e + '" contains "' + ok[e] + '"');
+        for (var f in contains.ko) {
+            if (contains.ko.hasOwnProperty(f)) {
+                t.not(ju.string.contains(f, contains.ko[f]), '"' + f + '" does not contains "' + contains.ko[f] + '"');
+            }
         }
     }
+};
 
-    for (var f in ko) {
-        if (ko.hasOwnProperty(f)) {
-            t.not(ju.string.contains(f, ko[f]), '"' + f + '" does not contains "' + ko[f] + '"');
-        }
+test("ju.string.contains", function (t) {
+    if (String.hasOwnProperty('contains') || String.prototype.contains) {
+        String.prototype.contains = undefined;
     }
 
+    contains.test(t);
     t.end();
 });
 
-test("ju.string.startsWith", function (t) {
-    var ok = {
+test("ju.string.contains:native", function (t) {
+    if (!String.hasOwnProperty('contains') || !String.prototype.contains) {
+        String.prototype.contains = ju.string.contains;
+    }
+
+    contains.test(t);
+    t.end();
+});
+
+
+var startsWith = {
+    ok: {
         'one thing at a time': 'one',
         "Un appât à ça c'est sûr": 'Un appât',
         "Un appât 0 à ça c'est sûr": 'Un',
@@ -146,32 +182,48 @@ test("ju.string.startsWith", function (t) {
         'Ça 0 100 {{2000}} 3 4 567 4 quatre vingt': 'Ç',
         '{{0 1000 {{ 2000 }} 3 4 567 4 quatre vingt': '{',
         'x0 10000 {{2000}} x y z 3 4 567 4 quatre vingt': 'x'
-    };
-
-    var ko = {
+    },
+    ko: {
         'one thing is good': 'purple',
         'one thing at a time': 'One',
         "Un appât à ça c'est sûr": 'UN APPÂT',
         '0 1 {{2000}} 3 4 567 44 quatre vingt': 'ah bon',
         '0 1 {{2000}} 3 4 567 4 quatre vingt': '567'
-    };
-
-    for (var e in ok) {
-        if (ok.hasOwnProperty(e)) {
-            t.ok(ju.string.startsWith(e, ok[e]), '"' + e + '" startsWith "' + ok[e] + '"');
+    },
+    test: function (t) {
+        for (var e in startsWith.ok) {
+            if (startsWith.ok.hasOwnProperty(e)) {
+                t.ok(ju.string.startsWith(e, startsWith.ok[e]), '"' + e + '" startsWith "' + startsWith.ok[e] + '"');
+            }
+        }
+        for (var f in startsWith.ko) {
+            if (startsWith.ko.hasOwnProperty(f)) {
+                t.not(ju.string.startsWith(f, startsWith.ko[f]), '"' + f + '" does not startsWith "' + startsWith.ko[f] + '"');
+            }
         }
     }
-    for (var f in ko) {
-        if (ko.hasOwnProperty(f)) {
-            t.not(ju.string.startsWith(f, ko[f]), '"' + f + '" does not startsWith "' + ko[f] + '"');
-        }
+};
+
+test("ju.string.startsWith", function (t) {
+    if (String.hasOwnProperty('startsWith') || String.prototype.startsWith) {
+        String.prototype.startsWith = undefined;
     }
 
+    startsWith.test(t);
     t.end();
 });
 
-test("ju.string.endsWith", function (t) {
-    var ok = {
+test("ju.string.startsWith:native", function (t) {
+    if (!String.hasOwnProperty('startsWith') || !String.prototype.startsWith) {
+        String.prototype.startsWith = ju.string.startsWith;
+    }
+
+    startsWith.test(t);
+    t.end();
+});
+
+var endsWith = {
+    ok: {
         'one thing at a time': 'e',
         "Un appât à ça c'est sûr": 'sûr',
         "Un appât 0 à ça c'est sûr oui": 'ui',
@@ -183,32 +235,49 @@ test("ju.string.endsWith", function (t) {
         '{{0 1000 {{ 2000 3 4 567 4 quatre vingt }}': '}',
         'x0 10000 {{2000}} x y z ': ' ',
         'x0 10000 {{o}} x y z ': 'x y z '
-    };
-
-    var ko = {
+    },
+    ko: {
         'one thing is good': 'is ',
         'one thing at a time': 'one',
         "Un appât à ça c'est sûr": 'UN APPÂT',
         '0 1 {{2000}} 3 4 567 44 quatre vingt': 'ah bon',
         '0 1 {{2000}} 3 4 567 4 quatre vingt': '567'
-    };
-
-    for (var e in ok) {
-        if (ok.hasOwnProperty(e)) {
-            t.ok(ju.string.endsWith(e, ok[e]), '"' + e + '" endsWith "' + ok[e] + '"');
+    },
+    test: function (t) {
+        for (var e in endsWith.ok) {
+            if (endsWith.ok.hasOwnProperty(e)) {
+                t.ok(ju.string.endsWith(e, endsWith.ok[e]), '"' + e + '" endsWith "' + endsWith.ok[e] + '"');
+            }
+        }
+        for (var f in endsWith.ko) {
+            if (endsWith.ko.hasOwnProperty(f)) {
+                t.not(ju.string.endsWith(f, endsWith.ko[f]), '"' + f + '" does not endsWith "' + endsWith.ko[f] + '"');
+            }
         }
     }
-    for (var f in ko) {
-        if (ko.hasOwnProperty(f)) {
-            t.not(ju.string.endsWith(f, ko[f]), '"' + f + '" does not endsWith "' + ko[f] + '"');
-        }
+};
+
+test("ju.string.endsWith", function (t) {
+    if (String.hasOwnProperty('endsWith') || String.prototype.endsWith) {
+        String.prototype.endsWith = undefined;
     }
 
+    endsWith.test(t);
     t.end();
 });
 
-test("ju.string.repeat", function (t) {
-    var datas = [
+test("ju.string.endsWith:native", function (t) {
+    if (!String.hasOwnProperty('endsWith') || !String.prototype.endsWith) {
+        String.prototype.endsWith = ju.string.endsWith;
+    }
+
+    endsWith.test(t);
+    t.end();
+});
+
+
+var repeat = {
+    datas: [
         {
             value: 'pinaise',
             params: 2,
@@ -229,32 +298,51 @@ test("ju.string.repeat", function (t) {
             params: 4,
             expected: 'àÀ\n\tçéÈ€àÀ\n\tçéÈ€àÀ\n\tçéÈ€àÀ\n\tçéÈ€'
         }
-    ];
-
-    for (var e in datas) {
-        if (datas.hasOwnProperty(e)) {
-            t.equal(
-                ju.string.repeat(datas[e].value, datas[e].params), datas[e].expected,
-                '"' + datas[e].value + '" repeat "' + datas[e].params + '" times'
-            );
+    ],
+    test: function (t) {
+        for (var e in repeat.datas) {
+            if (repeat.datas.hasOwnProperty(e)) {
+                t.equal(
+                    ju.string.repeat(repeat.datas[e].value, repeat.datas[e].params), repeat.datas[e].expected,
+                    '"' + repeat.datas[e].value + '" repeat "' + repeat.datas[e].params + '" times'
+                );
+            }
         }
     }
+};
 
+test("ju.string.repeat", function (t) {
+    if (String.hasOwnProperty('repeat') || String.prototype.repeat) {
+        String.prototype.repeat = undefined;
+    }
+
+    repeat.test(t);
     t.end();
 });
 
-test("ju.string.reverse", function(t){
-   var equals = {
-       'bodyboard':'draobydob',
-       '':'',
-       'youpi':'ipuoy',
-       'aéronef':'fenoréa'
-   };
+test("ju.string.repeat:native", function (t) {
+    if (!String.hasOwnProperty('repeat') || !String.prototype.repeat) {
+        String.prototype.repeat = ju.string.repeat;
+    }
+
+    repeat.test(t);
+    t.end();
+});
+
+test("ju.string.reverse", function (t) {
+    var equals = {
+        'bodyboard': 'draobydob',
+        '': '',
+        'youpi': 'ipuoy',
+        'aéronef': 'fenoréa'
+    };
+
     for (var e in equals) {
         if (equals.hasOwnProperty(e)) {
             t.equal(ju.string.reverse(e), equals[e], '"' + e + '" reverse "' + equals[e] + '"');
         }
     }
+
     t.end();
 });
 

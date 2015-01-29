@@ -24,7 +24,7 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trim = function (string) {
-        if (String.prototype.trim) {
+        if (String.hasOwnProperty('trim') && String.prototype.trim) {
             return string.trim();
         }
         return string.replace(/^\s+|\s+$/g, '');
@@ -119,7 +119,7 @@ function Str() {
      * @return {boolean} True if inputString contains searchedString, false otherwhise
      */
     Str.prototype.contains = function (inputString, searchedString) {
-        if (String.prototype.contains) {
+        if (String.hasOwnProperty('contains') && String.prototype.contains) {
             return inputString.contains(searchedString);
         }
         return inputString.indexOf(searchedString) !== -1;
@@ -141,7 +141,7 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.startsWith = function (inputString, searchedString, position) {
-        if (String.prototype.startsWith) {
+        if (String.hasOwnProperty('startsWith') && String.prototype.startsWith) {
             return inputString.startsWith(searchedString);
         }
         position = position || 0;
@@ -164,7 +164,7 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.endsWith = function (inputString, searchedString, position) {
-        if (String.prototype.endsWith) {
+        if (String.hasOwnProperty('endsWith') && String.prototype.endsWith) {
             return inputString.endsWith(searchedString);
         }
 
@@ -194,7 +194,7 @@ function Str() {
      * @return {string}
      */
     Str.prototype.repeat = function (string, count) {
-        if (String.prototype.repeat) {
+        if (String.hasOwnProperty('repeat') && String.prototype.repeat) {
             return string.repeat(count);
         }
 
