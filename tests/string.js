@@ -28,18 +28,18 @@ var trim = {
     }
 };
 
-test("ju.string.trim", function (t) {
-    if (String.hasOwnProperty('trim') || String.prototype.trim) {
-        String.prototype.trim = undefined;
+test("ju.string.trim:native", function (t) {
+    if (!String.hasOwnProperty('trim') || !String.prototype.trim) {
+        String.prototype.trim = ju.string.trim;
     }
 
     trim.test(t);
     t.end();
 });
 
-test("ju.string.trim:native", function (t) {
-    if (!String.hasOwnProperty('trim') || !String.prototype.trim) {
-        String.prototype.trim = ju.string.trim;
+test("ju.string.trim", function (t) {
+    if (String.hasOwnProperty('trim') || String.prototype.trim) {
+        String.prototype.trim = undefined;
     }
 
     trim.test(t);

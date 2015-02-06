@@ -5,7 +5,7 @@ browsers:
     platform: ["Windows 8.1","Windows 8","Windows 7","Windows XP","OS X 10.6","OS X 10.8","OS X 10.9","OS X 10.10","Linux"]
 
   - name: firefox
-    version: [10,latest]
+    version: [2,4,10,latest]
     platform: ["Windows 8.1","Windows 8","Windows 7","Windows XP","OS X 10.6","OS X 10.9","OS X 10.10","Linux"]
 
   - name: safari

@@ -4,7 +4,7 @@
 * 
 * @author : Sylvain Combes <combes.sylvain@gmail.com>
 * @version : 0.1.0
-* @date 2015-01-13
+* @date 2015-02-06
  */
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),(f.ju||(f.ju={})).string=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
@@ -33,6 +33,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trim = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         if (String.hasOwnProperty('trim') && String.prototype.trim) {
             return string.trim();
         }
@@ -51,6 +55,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trimLeft = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/^\s+/, '');
     };
 
@@ -65,6 +73,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trimRight = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/\s+$/, '');
     };
 
@@ -80,6 +92,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.trimFull = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' ');
     };
 
@@ -94,6 +110,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.toUpperCaseFirst = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return (string.charAt(0).toUpperCase() + string.slice(1));
     };
 
@@ -108,6 +128,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.toUpperCaseWords = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function ($1) {
             return $1.toUpperCase();
         });
@@ -128,6 +152,14 @@ function Str() {
      * @return {boolean} True if inputString contains searchedString, false otherwhise
      */
     Str.prototype.contains = function (inputString, searchedString) {
+        if(typeof inputString !== 'string') {
+            throw new TypeError('Invalid first argument type, must be string.');
+        }
+
+        if(typeof searchedString !== 'string') {
+            throw new TypeError('Invalid second argument type, must be string.');
+        }
+
         if (String.hasOwnProperty('contains') && String.prototype.contains) {
             return inputString.contains(searchedString);
         }
@@ -150,6 +182,14 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.startsWith = function (inputString, searchedString, position) {
+        if(typeof inputString !== 'string') {
+            throw new TypeError('Invalid first argument type, must be string.');
+        }
+
+        if(typeof searchedString !== 'string') {
+            throw new TypeError('Invalid second argument type, must be string.');
+        }
+
         if (String.hasOwnProperty('startsWith') && String.prototype.startsWith) {
             return inputString.startsWith(searchedString);
         }
@@ -173,6 +213,14 @@ function Str() {
      * @return {boolean}
      */
     Str.prototype.endsWith = function (inputString, searchedString, position) {
+        if(typeof inputString !== 'string') {
+            throw new TypeError('Invalid first argument type, must be string.');
+        }
+
+        if(typeof searchedString !== 'string') {
+            throw new TypeError('Invalid second argument type, must be string.');
+        }
+
         if (String.hasOwnProperty('endsWith') && String.prototype.endsWith) {
             return inputString.endsWith(searchedString);
         }
@@ -203,6 +251,14 @@ function Str() {
      * @return {string}
      */
     Str.prototype.repeat = function (string, count) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid first argument type, must be string.');
+        }
+
+        if(typeof count !== 'number') {
+            throw new TypeError('Invalid second argument type, must be number.');
+        }
+
         if (String.hasOwnProperty('repeat') && String.prototype.repeat) {
             return string.repeat(count);
         }
@@ -261,6 +317,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.reverse = function(string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.split('').reverse().join('');
     };
 
@@ -280,6 +340,11 @@ function Str() {
      */
     Str.prototype.nl2br = function nl2br(string, is_xhtml) {
         var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(new RegExp('\r\n|\n\r|\r|\n', 'g'), breakTag);
     };
 
@@ -290,6 +355,10 @@ function Str() {
      * @return {string} The string without the tags
      */
     Str.prototype.stripTags = function (string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/<\/?[^>]+>/g, '');
     };
 
@@ -305,6 +374,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.escapeHTML = function(string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     };
 
@@ -320,6 +393,10 @@ function Str() {
      * @return {string}
      */
     Str.prototype.unescapeHTML = function(string) {
+        if(typeof string !== 'string') {
+            throw new TypeError('Invalid argument type, must be string.');
+        }
+
         return string.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
     };
 
@@ -336,6 +413,14 @@ function Str() {
      * @return {number}     The levenshtein distance
      */
     Str.prototype.levenshtein = function (firstString, secondString) {
+        if(typeof firstString !== 'string') {
+            throw new TypeError('Invalid first argument type, must be string.');
+        }
+
+        if(typeof secondString !== 'string') {
+            throw new TypeError('Invalid second argument type, must be string.');
+        }
+
         var current = [],
             firstStringLength = firstString.length,
             secondStringLength = secondString.length,
