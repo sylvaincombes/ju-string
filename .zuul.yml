@@ -1,18 +1,18 @@
 ui: tape
 browsers:
   - name: chrome
-    version: [27,38]
+    version: [27,latest]
     platform: ["Windows 2012 R2","Windows 2012","Windows 2008","Windows 2003","Mac 10.6","Mac 10.8","Mac 10.9","Mac 10.10","Linux"]
 
   - name: firefox
-    version: [4,33]
+    version: [4,latest]
     platform: ["Windows 2012 R2","Windows 2012","Windows 2008","Windows 2003","Mac 10.6","Mac 10.8","Mac 10.9","Mac 10.10","Linux"]
 
   - name: safari
     version: 5..latest
 
   - name: ie
-    version: 6..latest
+    version: 8..latest
 
   - name: opera
     version: latest

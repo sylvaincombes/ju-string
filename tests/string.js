@@ -151,6 +151,15 @@ var contains = {
     }
 };
 
+test("ju.string.contains:native", function (t) {
+    if (!String.hasOwnProperty('contains') || !String.prototype.contains) {
+        String.prototype.contains = ju.string.contains;
+    }
+
+    contains.test(t);
+    t.end();
+});
+
 test("ju.string.contains", function (t) {
     if (String.hasOwnProperty('contains') || String.prototype.contains) {
         String.prototype.contains = undefined;
@@ -160,14 +169,7 @@ test("ju.string.contains", function (t) {
     t.end();
 });
 
-test("ju.string.contains:native", function (t) {
-    if (!String.hasOwnProperty('contains') || !String.prototype.contains) {
-        String.prototype.contains = ju.string.contains;
-    }
 
-    contains.test(t);
-    t.end();
-});
 
 
 var startsWith = {
@@ -204,18 +206,18 @@ var startsWith = {
     }
 };
 
-test("ju.string.startsWith", function (t) {
-    if (String.hasOwnProperty('startsWith') || String.prototype.startsWith) {
-        String.prototype.startsWith = undefined;
+test("ju.string.startsWith:native", function (t) {
+    if (!String.hasOwnProperty('startsWith') || !String.prototype.startsWith) {
+        String.prototype.startsWith = ju.string.startsWith;
     }
 
     startsWith.test(t);
     t.end();
 });
 
-test("ju.string.startsWith:native", function (t) {
-    if (!String.hasOwnProperty('startsWith') || !String.prototype.startsWith) {
-        String.prototype.startsWith = ju.string.startsWith;
+test("ju.string.startsWith", function (t) {
+    if (String.hasOwnProperty('startsWith') || String.prototype.startsWith) {
+        String.prototype.startsWith = undefined;
     }
 
     startsWith.test(t);
@@ -257,18 +259,19 @@ var endsWith = {
     }
 };
 
-test("ju.string.endsWith", function (t) {
-    if (String.hasOwnProperty('endsWith') || String.prototype.endsWith) {
-        String.prototype.endsWith = undefined;
+
+test("ju.string.endsWith:native", function (t) {
+    if (!String.hasOwnProperty('endsWith') || !String.prototype.endsWith) {
+        String.prototype.endsWith = ju.string.endsWith;
     }
 
     endsWith.test(t);
     t.end();
 });
 
-test("ju.string.endsWith:native", function (t) {
-    if (!String.hasOwnProperty('endsWith') || !String.prototype.endsWith) {
-        String.prototype.endsWith = ju.string.endsWith;
+test("ju.string.endsWith", function (t) {
+    if (String.hasOwnProperty('endsWith') || String.prototype.endsWith) {
+        String.prototype.endsWith = undefined;
     }
 
     endsWith.test(t);
@@ -311,18 +314,18 @@ var repeat = {
     }
 };
 
-test("ju.string.repeat", function (t) {
-    if (String.hasOwnProperty('repeat') || String.prototype.repeat) {
-        String.prototype.repeat = undefined;
+test("ju.string.repeat:native", function (t) {
+    if (!String.hasOwnProperty('repeat') || !String.prototype.repeat) {
+        String.prototype.repeat = ju.string.repeat;
     }
 
     repeat.test(t);
     t.end();
 });
 
-test("ju.string.repeat:native", function (t) {
-    if (!String.hasOwnProperty('repeat') || !String.prototype.repeat) {
-        String.prototype.repeat = ju.string.repeat;
+test("ju.string.repeat", function (t) {
+    if (String.hasOwnProperty('repeat') || String.prototype.repeat) {
+        String.prototype.repeat = undefined;
     }
 
     repeat.test(t);

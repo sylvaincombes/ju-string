@@ -285,7 +285,7 @@ function Str() {
 
         var rpt = "";
 
-        for (; ;) {
+        while (true) {
             if ((count & 1) == 1) {
                 rpt += str;
             }

@@ -57,16 +57,16 @@ module.exports = function (grunt) {
             files: ['tests/*.js']
         },
 
-        jsdoc : {
+/*        jsdoc : {
             dist : {
-                src: ['src/**/*.js', 'README.md'],
+                src: ['src/!**!/!*.js', 'README.md'],
                 options: {
                     destination: 'doc',
                     template : "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template",
                     configure : "jsdoc-conf.json"
                 }
             }
-        },
+        },*/
 
         clean: ["doc", "build"],
 
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'exorcise', 'uglify', 'jsdoc']);
+    grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'exorcise', 'uglify']);
     grunt.registerTask('test', ['build', 'tape']);
     grunt.registerTask('default', ['watch']);
 

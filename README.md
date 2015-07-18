@@ -12,6 +12,8 @@ It is part of the ju (Javascript Utilities) collection.
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/ju-string.svg)](https://saucelabs.com/u/ju-string)
 
+[![Dependency Status](https://www.versioneye.com/user/projects/55aa59993065350020000362/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55aa59993065350020000362)
+
 ## What it is
 
 It's a simple string utility to make the everyday job easier.
