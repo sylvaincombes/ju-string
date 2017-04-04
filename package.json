@@ -31,7 +31,7 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "~1.0.0",
     "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-uglify": "*",
+    "grunt-contrib-uglify": ">=2.3.0",
     "grunt-contrib-watch": "*",
     "grunt-exorcise": "^2.1.0",
     "grunt-tape": "~0.1.0",
